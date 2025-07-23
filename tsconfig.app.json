@@ -1,0 +1,54 @@
+{
+  "extends": "./nuxt.config.ts",
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "#app": ["./.nuxt/types/app.d.ts"],
+      "#imports": ["./.nuxt/imports.d.ts"],
+      "#build": ["./.nuxt/types/build.d.ts"],
+      "#components": ["./components"],
+      "#composables": ["./composables"],
+      "#pages": ["./pages"],
+      "#server": ["./server"],
+      "#utils": ["./utils"]
+    }
+  },
+  "types": [
+    "node",
+    "@nuxt/types",
+    "@pinia/nuxt",
+    "@nuxtjs/i18n/dist/runtime/types",
+    "@nuxtjs/color-mode/types/nuxt",
+    "@nuxtjs/device/types",
+    "@nuxt/image"
+  ],
+  "vueCompilerOptions": {
+    "target": 3.3,
+    "types": ["node", "@nuxt/types", "@nuxtjs/i18n"]
+  },
+  "include": [
+    ".nuxt/nuxt.d.ts",
+    ".nuxt/types/**/*.d.ts",
+    "./components/**/*",
+    "./composables/**/*",
+    "./layouts/**/*",
+    "./middleware/**/*",
+    "./pages/**/*",
+    "./plugins/**/*",
+    "./server/**/*",
+    "./app.vue",
+    "./app.config.ts",
+    "./error.vue"
+  ],
+  "exclude": ["node_modules"]
+}
